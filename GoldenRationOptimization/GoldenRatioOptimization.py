@@ -113,4 +113,4 @@ class GoldenSectionSearch(Scene):
 
         self.wait(2)  # Wait at the end of the animation
 
-# To run this code write "manim -pql GoldenRationOptimization.py GoldenSectionSearch" in terminal
+# To run this code write "manim -pql GoldenRatioOptimization.py GoldenSectionSearch" in terminal
