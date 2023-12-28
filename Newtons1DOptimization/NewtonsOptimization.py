@@ -1,14 +1,14 @@
 import sympy as sp
 
 
-def Find_x_Star(f, x_k):
+def Find_x_Star(f, x_k) -> float:
     x = sp.symbols('x')
     f_prime = sp.diff(f, x)
     f_double_prime = sp.diff(f_prime, x)
 
-    for i in range(10):
-        first_derivative_at_x = f_prime.subs(x, x_k)
-        second_derivative_at_x = f_double_prime.subs(x, x_k)
+    for i in range(100):
+        first_derivative_at_x = f_prime.subs(x, x_k).evalf()
+        second_derivative_at_x = f_double_prime.subs(x, x_k).evalf()
 
         # Check if the second derivative is non-zero to avoid division by zero
         if second_derivative_at_x != 0:
@@ -17,5 +17,5 @@ def Find_x_Star(f, x_k):
         else:
             print("Division by zero. Stopping the iteration.")
             break
+    return float(x_k)
 
-    return x_k
